@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@niche-works/style-utils':
+        specifier: link:../style-utils
+        version: link:../style-utils
       '@niche-works/types':
         specifier: ^0.3.1
         version: 0.3.1

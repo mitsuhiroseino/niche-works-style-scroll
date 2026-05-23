@@ -40,5 +40,6 @@
     "strictPropertyInitialization": false,
     "preserveSymlinks": false
   },
-  "include": ["src", "globals.d.ts"]
+  "include": ["src", "globals.d.ts"],
+  "exclude": ["src/**/*.test.ts", "src/**/*.spec.ts"]
 }

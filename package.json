@@ -25,7 +25,9 @@
     "./core/*": "./src/core/*/index.ts",
     "./core/constants": "./src/core/constants.ts",
     "./core/styles.scss": "./src/core/styles.scss",
-    "./core/*.scss": "./src/core/*/styles.scss"
+    "./core/styles.css": "./src/core/styles.scss",
+    "./core/*.scss": "./src/core/*/styles.scss",
+    "./core/*.css": "./src/core/*/styles.scss"
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
@@ -42,6 +44,7 @@
     "tidy": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json}\" --config ./prettier.tidy.config.js"
   },
   "dependencies": {
+    "@niche-works/style-utils": "link:../style-utils",
     "@niche-works/types": "^0.3.1",
     "@niche-works/utils": "^0.4.0",
     "tslib": "^2.8.1"
