@@ -1,0 +1,53 @@
+@property --nws-scroll-scrollbar-thumbColor {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(0, 0, 0, 0.1);
+}
+
+@property --nws-scroll-scrollbar-trackColor {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(128, 128, 128, 0.04);
+}
+
+@supports not (selector(::-webkit-scrollbar)) {
+  .nws-scroll-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--nws-scroll-scrollbar-thumbColor)
+      var(--nws-scroll-scrollbar-trackColor);
+    transition: scrollbar-color 0.5s;
+  }
+}
+
+.nws-scroll-scrollbar {
+  transition:
+    --nws-scroll-scrollbar-trackColor 0.5s,
+    --nws-scroll-scrollbar-thumbColor 0.5s;
+
+  &::-webkit-scrollbar-corner {
+    height: 13px;
+    width: 13px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: var(--nws-scroll-scrollbar-trackColor);
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--nws-scroll-scrollbar-trackColor);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-style: solid;
+    border-color: var(--nws-scroll-scrollbar-trackColor);
+    border-width: 2px;
+    background-color: var(--nws-scroll-scrollbar-thumbColor);
+    border-radius: 8px;
+    background-clip: content-box;
+  }
+
+  &:hover {
+    --nws-scroll-scrollbar-thumbColor: rgba(0, 0, 0, 0.3);
+  }
+}
